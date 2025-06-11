@@ -74,3 +74,5 @@ jobs:
           context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/my_crud_project:latest
+
+
