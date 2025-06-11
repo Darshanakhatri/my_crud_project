@@ -2,9 +2,11 @@
 
 namespace App\Tests\Controller;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use App\Controller\Api\ProductApiController;
 
-final class Api\ProductApiControllerTest extends WebTestCase
+final class ProductApiControllerTest extends WebTestCase
 {
     public function testIndex(): void
     {
