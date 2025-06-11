@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Product{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="card shadow-sm">
+            <div class="card-header bg-dark text-white">
+                <h3 class="mb-0">Create New Product</h3>
+            </div>
+            <div class="card-body">
+                {{ include('product/_form.html.twig') }}
+                <a href="{{ path('app_product_index') }}" class="btn btn-secondary mt-3">← Back to list</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

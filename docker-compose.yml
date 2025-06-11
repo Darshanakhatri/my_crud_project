@@ -1,0 +1,27 @@
+#version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: my_crud_project-app
+    working_dir: /var/www/my_crud_project
+    volumes:
+      - .:/var/www/my_crud_project
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: mysql://root:Mysqlpass%2A123%21root@db:3306/my_crud_db
+
+  db:
+    image: mysql:8
+    container_name: my_crud_project-database
+    restart: always
+    environment:
+      MYSQL_DATABASE: my_crud_db
+      MYSQL_ROOT_PASSWORD: Mysqlpass*123!root
+    ports:
+      - "3306:3306"
